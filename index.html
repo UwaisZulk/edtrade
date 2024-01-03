@@ -1,0 +1,513 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>EDTRADE</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+    <link href="https://fonts.cdnfonts.com/css/modern-sans" rel="stylesheet">
+
+    <!-- Add this link tag for the favicon -->
+    <link rel="icon" href="images/companylogo.ico" type="image/x-icon">
+
+    <!-- Add this link tag in the head section to include the Montserrat font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+
+    <!-- Add this script tag before the closing body tag to include Swiper JS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Add this script tag before the closing body tag to include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+
+
+<body class="is-preload" style="background: linear-gradient(to right, #001f3f, #1f1616); color: rgb(255, 255, 255);">
+
+    <div style="margin-top: 20px; text-align: center; padding-top: 20px; background: linear-gradient(to bottom, #10152c, #1e1e2b); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.1);">
+        <a href="index.html" style="text-decoration: none; color: #C0C0C0; font-family: 'Roboto', sans-serif; font-size: 18px; margin-right: 20px; border-bottom: none; transition: all 0.3s; text-shadow: 0 0 10px rgba(0, 0, 128, 1);">Home</a>
+        <a href="#" onclick="scrollToSection('services-section')" style="text-decoration: none; color: #C0C0C0; font-family: 'Roboto', sans-serif; font-size: 18px; margin-right: 20px; border-bottom: none; transition: all 0.3s; text-shadow: 0 0 10px rgba(0, 0, 128, 1);">Services</a>
+        <a href="#" onclick="scrollToSection('performance-section')" style="text-decoration: none; color: #C0C0C0; font-family: 'Roboto', sans-serif; font-size: 18px; margin-right: 20px; border-bottom: none; transition: all 0.3s; text-shadow: 0 0 10px rgba(0, 0, 128, 1);">Performance</a>
+        <a href="#" onclick="scrollToSection('contact-section')" style="text-decoration: none; color: #C0C0C0; font-family: 'Roboto', sans-serif; font-size: 18px; margin-right: 20px; border-bottom: none; transition: all 0.3s; text-shadow: 0 0 10px rgba(0, 0, 128, 1);">Contact</a>
+        <!-- Black line at the bottom -->
+        <div style="border-bottom: 2px solid #000; margin-top: 20px;"></div>
+    </div>
+        <script>
+
+function scrollToSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        </script>
+        
+
+    </div>
+
+    <!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+				<!-- Logo -->
+				<a href="index.html" class="logo" style="font-size: 18px; font-family: 'Montserrat', sans-serif; 
+					text-decoration: none; display: flex; flex-direction: column; align-items: center; 
+					background-size: cover;
+					padding: 8px; border-radius: 8px; color: #C0C0C0; 
+					text-shadow: 0 0 16px rgba(0, 0, 128, 1), 0 0 16px rgba(0, 0, 128, 1), 0 0 16px rgba(0, 0, 128, 1); 
+					box-shadow: 0 12px 24px rgba(255, 255, 255, 0.1); margin: 10px auto; margin-bottom: 40px;">
+	
+					<span class="symbol" style="font-size: 40px;">
+						<img src="images/companylogo.jpg" alt="" style="max-width: 100%; height: auto; border-radius: 40%;" />
+					</span>
+					<span class="title" style="font-size: 24px;">EDTRAD<span style="color: #3366cc;">E</span>
+					</a>
+			</div>
+		</header>
+	</div>
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <style>
+                    /* Add your existing styles here */
+
+                    /* Fade-in animation */
+                    @keyframes fadeIn {
+                        from {
+                            opacity: 0;
+                        }
+
+                        to {
+                            opacity: 1;
+                        }
+                    }
+
+                    h1,
+                    p {
+                        animation: fadeIn 3.5s ease-in-out;
+                    }
+
+                    /* Swiper Styles */
+                    .swiper-container {
+                        width: 100%;
+                        overflow: hidden;
+                        height: 500px;
+                        /* Adjust the height as needed */
+                    }
+
+                    .swiper-wrapper {
+                        display: flex;
+                    }
+
+                    .swiper-slide {
+                        flex: 0 0 50vw;
+                        width: 100%;
+                        overflow: hidden;
+                        height: 100%;
+                    }
+
+                    .swiper-slide img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                </style>
+
+                <!-- Header -->
+                <style>
+                    :root {
+                        --header-font-family: 'Modern Sans', sans-serif;
+                        --header-font-size: 14px;
+                        --header-line-height: 1.5;
+                        --header-color: white; /* Change this to your preferred color */
+                        --header-border-color: #000; /* Change this to the color you want for the bottom border */
+                        --header-border-distance: 50px; /* Adjust as needed for the distance between text and border */
+                    }
+
+                    header {
+                        font-family: var(--header-font-family);
+                        font-size: var(--header-font-size);
+                        line-height: var(--header-line-height);
+                        color: var(--header-color);
+                        text-align: center;
+                        margin: 0 auto;
+                        max-width: 800px;
+                        border-bottom: 2px solid var(--header-border-color);
+                        padding-bottom: 10px;
+                        /* Adjust as needed for spacing between text and border */
+                        padding-top: var(--header-border-distance);
+                        /* Adjusted to include distance from text */
+                        position: relative;
+                        /* Added to create a stacking context */
+                    }
+                </style>
+
+                <!-- Your header code -->
+                <header>
+                    <h1>FINANCE YOUR FUTURE WITH </h1>
+					<span class="title" style="font-size: 32px;">· EDTRAD<span style="color: #3366cc;">E </span>·</span>
+                </header>
+
+                <p style="margin-top: 10px; text-align: center; font-size: 16px; color: #ffffff;">Linked In Profile: <a href="https://www.linkedin.com/in/elfredly/" target="_blank" rel="noopener noreferrer" style="color: #008edb; text-decoration: none; border-bottom: none;">elfredly</a>.</p>
+
+            </div>
+        </div>
+
+        <!-- Image Slider Section -->
+<section class="swiper-container" style="margin-bottom: 0px; background: linear-gradient(to right, #24316a, #2d2828); color: rgb(0, 0, 0); padding: 60px 0;">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <img src="images/sliderimg.jpg" alt="Slide 1">
+        </div>
+        <div class="swiper-slide">
+            <img src="images/sliderimage2.jpg" alt="Slide 2">
+        </div>
+        <div class="swiper-slide">
+            <img src="images/sliderimage3.jpg" alt="Slide 3">
+        </div>
+        <div class="swiper-slide">
+            <img src="images/sliderimage4.jpg" alt="Slide 4">
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+</section>
+
+        <script>
+            var swiper = new Swiper('.swiper-container', {
+                slidesPerView: 'auto',
+                spaceBetween: 10,
+                loop: true,
+                speed: 5000, // Initial speed value
+                autoplay: {
+                    delay: 3000, // Initial delay value
+                    disableOnInteraction: false,
+                },
+            });
+
+            // Speed Adjuster
+            var speedSlider = document.getElementById('speedSlider');
+            speedSlider.addEventListener('input', function () {
+                swiper.params.speed = parseInt(this.value);
+            });
+
+            // Delay Adjuster
+            var delaySlider = document.getElementById('delaySlider');
+            delaySlider.addEventListener('input', function () {
+                swiper.params.autoplay.delay = parseInt(this.value);
+                swiper.autoplay.start();
+            });
+        </script>
+
+        <!-- Graph Section -->
+        <section id="performance-section" class="graph-section" data-aos= "fade-up" style="background: linear-gradient(to right, #24316a, #2d2828); color: rgb(0, 0, 0); padding: 60px 0;">
+            <div class="inner">
+            <h2 style="font-size: 28px; color: #ffffff; text-align: center;">EDTRADEDU 2023 Performance</h2>
+            <p style=" font-size: 12px; margin-left: 20px;color: #d0ff00;" >* ROI ACROSS ALL ASSETS </p>
+            <canvas id="performanceGraph"></canvas>
+
+            <script>
+                var ctx = document.getElementById('performanceGraph').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'line', // Change the type to 'line' for a line graph
+                    data: {
+                        labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEPT', 'OCT', 'NOV', 'DEC'],
+                        datasets: [{
+                            label: 'Monthly Performance',
+                            data: [3, 1, 2.2, 1.5, 3.2, 1.2, 1.4, 2.2, 3.6, 1.2, 7, 1.1],
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1,
+                            pointRadius: 6, // Adjust the size of data points on the line
+                            pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+                            fill: false, // Remove fill for a line graph
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Percentage',
+                                },
+                            },
+                        },
+                        animation: {
+                            duration: 3000, // Adjust the animation duration (in milliseconds)
+                        },
+                        responsive: true,
+                        plugins: {
+                            tooltip: {
+                                enabled: true,
+                                mode: 'nearest',
+                                callbacks: {
+                                    label: function (context) {
+                                        return context.dataset.label + ': ' + context.parsed.y + '%';
+                                    },
+                                },
+                            },
+                        },
+                    }
+                });
+            </script>
+
+        </section>
+
+        <input type="color" id="bgColorPicker" value="#001a33" style="position: fixed; bottom: 10px; right: 10px; padding: 5px; border: none; border-radius: 5px;">
+        <script>
+            const bgColorPicker = document.getElementById('bgColorPicker');
+            const body = document.body;
+
+            bgColorPicker.addEventListener('input', (event) => {
+                body.style.backgroundColor = event.target.value;
+            });
+        </script>
+
+    </div>
+
+
+<!--ASSET ALLOCATION SECTION-->
+<section class="asset-allocation-section" style="background: linear-gradient(to right, #24316a, #2d2828); color: rgb(0, 0, 0); padding: 60px 0;">
+    <div class="inner" data-aos="fade-up">
+        <h2 style="font-size: 32px; margin-bottom: 40px; text-align: center;color:white">Portfolio</h2>
+
+        <!-- Image for Asset Allocation -->
+        <img src="images/assetall.jpg" alt="Asset Allocation Image" class="asset-image" style="display: block;
+         margin: 0 auto; max-width: 80%; box-shadow: 0 16px 32px rgba(255, 255, 255, 0.2); border-radius: 10px;">
+
+    </div>
+</section>
+
+<!--Finanicial stability report-->
+
+<section class="financial-report-section" style="background: linear-gradient(to right, #24316a, #2d2828); color: rgb(0, 0, 0); padding: 60px 0;">
+    <div class="inner">
+        <h2 style="font-size: 32px; margin-bottom: 40px; text-align: center;color: white;">Financial Stability Report</h2>
+
+        <!-- Table for Financial Stability Report -->
+        <table class="financial-table">
+            <tr>
+                <td>Total Percentage Taken</td>
+                <td>67%</td>
+            </tr>
+            <tr>
+                <td>Next Due</td>
+                <td>1st January 2025</td>
+            </tr>
+            <tr>
+                <td>Current Bank Rate</td>
+                <td>5.25%</td>
+            </tr>
+            <tr>
+                <td>Current Inflation Rate</td>
+                <td>3.9%</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<style>
+    .financial-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        font-size: 18px;
+    }
+
+    .financial-table td, .financial-table th {
+        border: 1px solid #3366cc;
+        padding: 12px;
+        text-align: left;
+        color: white;
+    }
+
+    .financial-table th {
+        background-color: #001f3f;
+        color: #3366cc;
+    }
+</style>
+
+
+		
+<!-- Services Section -->
+<section id="services-section"class="services-section" style="background: linear-gradient(to right, #24316a, #2d2828); color: rgb(0, 0, 0); padding: 60px 0;">
+    <div class="inner">
+        <h2 style="font-size: 32px; text-align: center; margin-bottom: 40px;color: white;">Our Services</h2>
+
+        <div class="services-grid">
+            <div class="service-card" data-aos="fade-up">
+                <img src="images/ip.png" alt="Portfolio Management Icon" class="service-icon">
+                <h3>Portfolio Management</h3>
+                <p>Optimize your investment portfolio for maximum returns with our expert portfolio management services.</p>
+            </div>
+
+            <div class="service-card"  data-aos="fade-up">
+                <img src="images/fr.png" alt="Financial Risk Management Icon" class="service-icon">
+                <h3>Financial Risk Management</h3>
+                <p>Mitigate financial risks and safeguard your assets with our comprehensive financial risk management strategies.</p>
+            </div>
+
+            <div class="service-card"  data-aos="fade-up">
+                <img src="images/bm.png" alt="Business Management Icon" class="service-icon">
+                <h3>Business Management</h3>
+                <p>Enhance the efficiency and profitability of your business through our tailored business management solutions.</p>
+            </div>
+
+            <div class="service-card"  data-aos="fade-up">
+                <img src="images/itr.png" alt="International Trade Icon" class="service-icon">
+                <h3>International Trade</h3>
+                <p>Navigate the complexities of international trade and expand your business globally with our guidance.</p>
+            </div>
+
+            <div class="service-card"  data-aos="fade-up">
+                <img src="images/cc.png" alt="Crypto Trading Icon" class="service-icon">
+                <h3>Crypto Trading</h3>
+                <p>Stay ahead in the world of cryptocurrency with our expert consultation and advisory services.</p>
+        </div>
+</section>
+
+<style>
+    /* Add this CSS for the Services Section */
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .service-card {
+        background: #283040;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 16px rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    .service-icon {
+        max-width: 50%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .service-card h3 {
+        color: #65aee1;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .service-card p {
+        color: #ffffff;
+        font-size: 16px;
+    }
+
+    [data-aos] {
+        opacity: 0;
+        transition: opacity 1s;
+    }
+
+    [data-aos].aos-animate {
+        opacity: 1;
+    }
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1500,
+        easing: 'ease-out-back',
+        once: false, // Set to true for the animation to only happen once
+    });
+</script>
+
+
+
+<!-- Footer Section -->
+<footer id="contact-section" style="background: linear-gradient(to top, #10152c, #5e5e71); color: white; text-align: center; padding: 20px 0;">
+    <div class="inner">
+        <p>&copy; 2024 EDTRADE. All rights reserved.</p>
+        <p>Contact: whalesaries@gmail.com</p>
+        <p>Website Programmer : muhammaduwaiszulkarnain@proton.me</p>
+    </div>
+</footer>
+
+
+
+
+
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+
+
+           <!-- Back-to-Top Arrow -->
+<div id="back-to-top" onclick="scrollToTop">
+    <img src="images/back-to-top.png" alt="Up Arrow">
+</div>
+
+<style>
+    #back-to-top {
+        position: fixed;
+        bottom: 50px;
+        right: 50%;
+        transform: translateX(50%);
+        background-color: #3366cc00;
+        color: white;
+        padding: 15px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        transition: opacity 0.3s ease-in-out;
+        z-index: 999; /* Ensure it's above other elements */
+    }
+
+    #back-to-top img {
+        width: 30px; /* Adjust the size as needed */
+        height: 30px;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', function () {
+            if (window.pageYOffset > 200) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        backToTopButton.addEventListener('click', function () {
+            scrollToTop();
+        });
+    });
+
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+</script>
+
+
+	</body>
+</html>
